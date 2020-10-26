@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const mongoosePaginate = require('mongoose-paginate');
+//const mongoosePaginate = require('mongoose-paginate');
 
-const ProductSchema = new mongoose.Schema({
+const CategorySchema = new mongoose.Schema({
     title:{
         type: String,
         required: true,
@@ -10,23 +10,18 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    url: {
-        type: String,
-        required: true,
-    },
     createdAt:{
         type: Date,
         default: Date.now,
     },
-    // status:{
-    //     type: String,
-    //     required: true,
-    // }
+    status:{
+        type: String,
+        required: true,
+    }
 });
 
-ProductSchema.plugin(mongoosePaginate);
-mongoose.model('Product', ProductSchema);
-
+//ProductSchema.plugin(mongoosePaginate);
+mongoose.model('Category', CategorySchema);
 
 // entrada no café ICFFUT - 26/10
 // entrada 116,01
